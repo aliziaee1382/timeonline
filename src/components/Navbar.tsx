@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <h1 className="text-base sm:text-lg font-bold bg-gradient-to-l from-violet-400 via-indigo-300 to-cyan-400 dark:from-violet-400 dark:via-indigo-300 dark:to-cyan-300 bg-clip-text text-transparent">
+              <h1 className="hidden sm:block text-base sm:text-lg font-bold bg-gradient-to-l from-violet-400 via-indigo-300 to-cyan-400 dark:from-violet-400 dark:via-indigo-300 dark:to-cyan-300 bg-clip-text text-transparent">
                 سامانه ساعت و تقویم
               </h1>
               <span className="text-[10px] font-semibold font-mono tracking-wider px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">

@@ -73,20 +73,20 @@ export const HeroClock: React.FC = () => {
   };
 
   return (
-    <section id="hero-clock" className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 md:py-10">
-      <div className="relative overflow-hidden rounded-3xl backdrop-blur-2xl bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-950/80 dark:from-slate-900/90 dark:via-slate-950/90 dark:to-[#090d16] light:from-white/90 light:via-slate-50/90 light:to-slate-100/90 border border-violet-500/20 dark:border-violet-500/15 shadow-2xl p-6 sm:p-8 md:p-12">
+    <section id="hero-clock" className="relative w-full max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-6 md:py-10">
+      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl backdrop-blur-2xl bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-950/80 dark:from-slate-900/90 dark:via-slate-950/90 dark:to-[#090d16] light:from-white/90 light:via-slate-50/90 light:to-slate-100/90 border border-violet-500/20 dark:border-violet-500/15 shadow-2xl p-3.5 sm:p-8 md:p-12">
         
         {/* Ambient Glow in the background */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 items-center">
           
           {/* Left Column (Digital Display & Dates) */}
-          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-right space-y-6">
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-right space-y-4 sm:space-y-6">
             
             {/* Live Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-500/10 dark:bg-violet-500/15 border border-violet-500/30 text-violet-600 dark:text-violet-300 text-xs font-medium">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-violet-500/10 dark:bg-violet-500/15 border border-violet-500/30 text-violet-600 dark:text-violet-300 text-[10px] sm:text-xs font-medium">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
@@ -95,11 +95,11 @@ export const HeroClock: React.FC = () => {
               <span className="text-slate-400 dark:text-slate-500">|</span>
               <div className="flex items-center gap-1">
                 {isDay ? (
-                  <span className="flex items-center gap-1 text-amber-500 dark:text-amber-400 text-[11px]">
+                  <span className="flex items-center gap-1 text-amber-500 dark:text-amber-400 text-[10px] sm:text-[11px]">
                     <Sun className="w-3 h-3" /> روز
                   </span>
                 ) : (
-                  <span className="flex items-center gap-1 text-indigo-400 text-[11px]">
+                  <span className="flex items-center gap-1 text-indigo-400 text-[10px] sm:text-[11px]">
                     <Moon className="w-3 h-3" /> شب
                   </span>
                 )}
@@ -117,12 +117,12 @@ export const HeroClock: React.FC = () => {
                 <div 
                   dir="ltr"
                   style={{ direction: 'ltr' }}
-                  className="flex items-baseline justify-center lg:justify-start font-mono tracking-tight font-extrabold text-5xl sm:text-7xl md:text-8xl bg-gradient-to-b from-white via-slate-100 to-slate-400 dark:from-white dark:via-slate-100 dark:to-slate-300 light:from-slate-900 light:via-slate-800 light:to-slate-700 bg-clip-text text-transparent drop-shadow-sm"
+                  className="flex items-baseline justify-center lg:justify-start font-mono tracking-tight font-extrabold text-4xl sm:text-7xl md:text-8xl bg-gradient-to-b from-white via-slate-100 to-slate-400 dark:from-white dark:via-slate-100 dark:to-slate-300 light:from-slate-900 light:via-slate-800 light:to-slate-700 bg-clip-text text-transparent drop-shadow-sm"
                 >
                   <span>{usePersianDigitsInClock ? toPersianDigits(pad2(hours)) : pad2(hours)}</span>
-                  <span className="mx-1 text-cyan-400/80 animate-pulse font-sans">:</span>
+                  <span className="mx-0.5 sm:mx-1 text-cyan-400/80 animate-pulse font-sans">:</span>
                   <span>{usePersianDigitsInClock ? toPersianDigits(pad2(minutes)) : pad2(minutes)}</span>
-                  <span className="mx-1 text-cyan-400/80 animate-pulse font-sans">:</span>
+                  <span className="mx-0.5 sm:mx-1 text-cyan-400/80 animate-pulse font-sans">:</span>
                   <span className="text-violet-400 dark:text-violet-400">
                     {usePersianDigitsInClock ? toPersianDigits(pad2(seconds)) : pad2(seconds)}
                   </span>
@@ -146,55 +146,55 @@ export const HeroClock: React.FC = () => {
               <button
                 id="toggle-digits-format-btn"
                 onClick={() => setUsePersianDigitsInClock(!usePersianDigitsInClock)}
-                className="mt-2 text-xs text-slate-500 hover:text-cyan-400 dark:text-slate-400 transition-colors flex items-center gap-1.5"
+                className="mt-1.5 sm:mt-2 text-[10px] sm:text-xs text-slate-500 hover:text-cyan-400 dark:text-slate-400 transition-colors flex items-center gap-1.5"
               >
-                <Sparkles className="w-3 h-3 text-cyan-400" />
+                <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400" />
                 <span>نمایش ارقام: {usePersianDigitsInClock ? 'فارسی (۱۲:۳۴)' : 'لاتین (12:34)'}</span>
               </button>
             </div>
 
-            {/* Real-time Triple Date Badges */}
+            {/* Real-time Triple Date Badges - 3 columns on mobile */}
             {dateInfo && (
-              <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div className="w-full grid grid-cols-3 gap-1.5 sm:gap-3 pt-1 sm:pt-2">
                 {/* Solar Hijri */}
-                <div className="p-3.5 rounded-2xl bg-slate-800/40 dark:bg-slate-800/50 light:bg-white/80 border border-violet-500/20 dark:border-violet-500/20 shadow-sm flex flex-col justify-between text-right">
-                  <div className="flex items-center justify-between text-[11px] text-violet-400 font-medium mb-1">
-                    <span>گاه‌شمار خورشیدی</span>
-                    <span className="text-[10px] px-1.5 py-0.2 rounded bg-violet-500/10">هجری شمسی</span>
+                <div className="p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-slate-800/40 dark:bg-slate-800/50 light:bg-white/80 border border-violet-500/20 dark:border-violet-500/20 shadow-sm flex flex-col justify-between text-right">
+                  <div className="flex items-center justify-between text-[9px] sm:text-[11px] text-violet-400 font-medium mb-0.5 sm:mb-1">
+                    <span className="truncate">خورشیدی</span>
+                    <span className="text-[8px] sm:text-[10px] px-1 py-0.2 rounded bg-violet-500/10 hidden sm:inline">هجری شمسی</span>
                   </div>
-                  <div className="text-sm sm:text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900">
-                    {dateInfo.dayOfWeek.nameFa}، {toPersianDigits(dateInfo.jalali.day)} {dateInfo.jalaliMonthName}
+                  <div className="text-xs sm:text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 leading-tight">
+                    {toPersianDigits(dateInfo.jalali.day)} {dateInfo.jalaliMonthName}
                   </div>
-                  <div className="text-xs text-slate-400 font-mono mt-0.5">
-                    سال {toPersianDigits(dateInfo.jalali.year)} {dateInfo.isJalaliLeap ? '(کبیسه)' : ''}
+                  <div className="text-[9px] sm:text-xs text-slate-400 font-mono mt-0.5 truncate">
+                    {toPersianDigits(dateInfo.jalali.year)} {dateInfo.isJalaliLeap ? '(کبیسه)' : ''}
                   </div>
                 </div>
 
                 {/* Gregorian */}
-                <div className="p-3.5 rounded-2xl bg-slate-800/40 dark:bg-slate-800/50 light:bg-white/80 border border-cyan-500/20 dark:border-cyan-500/20 shadow-sm flex flex-col justify-between text-right">
-                  <div className="flex items-center justify-between text-[11px] text-cyan-400 font-medium mb-1">
-                    <span>گاه‌شمار میلادی</span>
-                    <span className="text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/10">Gregorian</span>
+                <div className="p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-slate-800/40 dark:bg-slate-800/50 light:bg-white/80 border border-cyan-500/20 dark:border-cyan-500/20 shadow-sm flex flex-col justify-between text-right">
+                  <div className="flex items-center justify-between text-[9px] sm:text-[11px] text-cyan-400 font-medium mb-0.5 sm:mb-1">
+                    <span className="truncate">میلادی</span>
+                    <span className="text-[8px] sm:text-[10px] px-1 py-0.2 rounded bg-cyan-500/10 hidden sm:inline">Gregorian</span>
                   </div>
-                  <div className="text-sm sm:text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900">
+                  <div className="text-xs sm:text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 leading-tight">
                     {dateInfo.gregorian.day} {dateInfo.gregorianMonthName}
                   </div>
-                  <div className="text-xs text-slate-400 font-mono mt-0.5">
+                  <div className="text-[9px] sm:text-xs text-slate-400 font-mono mt-0.5 truncate">
                     {dateInfo.gregorian.year} {dateInfo.isGregorianLeap ? '(Leap)' : ''}
                   </div>
                 </div>
 
                 {/* Islamic Lunar */}
-                <div className="p-3.5 rounded-2xl bg-slate-800/40 dark:bg-slate-800/50 light:bg-white/80 border border-emerald-500/20 dark:border-emerald-500/20 shadow-sm flex flex-col justify-between text-right">
-                  <div className="flex items-center justify-between text-[11px] text-emerald-400 font-medium mb-1">
-                    <span>گاه‌شمار قمری</span>
-                    <span className="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/10">هجری قمری</span>
+                <div className="p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-slate-800/40 dark:bg-slate-800/50 light:bg-white/80 border border-emerald-500/20 dark:border-emerald-500/20 shadow-sm flex flex-col justify-between text-right">
+                  <div className="flex items-center justify-between text-[9px] sm:text-[11px] text-emerald-400 font-medium mb-0.5 sm:mb-1">
+                    <span className="truncate">قمری</span>
+                    <span className="text-[8px] sm:text-[10px] px-1 py-0.2 rounded bg-emerald-500/10 hidden sm:inline">هجری قمری</span>
                   </div>
-                  <div className="text-sm sm:text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900">
+                  <div className="text-xs sm:text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 leading-tight">
                     {toPersianDigits(dateInfo.hijri.day)} {dateInfo.hijriMonthName}
                   </div>
-                  <div className="text-xs text-slate-400 font-mono mt-0.5">
-                    سال {toPersianDigits(dateInfo.hijri.year)} هـ.ق
+                  <div className="text-[9px] sm:text-xs text-slate-400 font-mono mt-0.5 truncate">
+                    {toPersianDigits(dateInfo.hijri.year)} هـ.ق
                   </div>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export const HeroClock: React.FC = () => {
 
           {/* Right Column: Sleek 3D-styled SVG Analog Chronometer */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center">
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 flex items-center justify-center">
+            <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 flex items-center justify-center">
               
               {/* Outer Glow Halo */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-violet-600/30 via-indigo-500/15 to-cyan-400/25 blur-xl pointer-events-none" />
