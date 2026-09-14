@@ -1,0 +1,6 @@
+{
+  "name": "سامانه ساعت جهانی، تقویم و مبدل تاریخ آنلاین",
+  "description": "سامانه مدرن و لوکس ساعت جهانی، تقویم تعاملی خورشیدی، مبدل سه‌گانه تاریخ (شمسی، میلادی، قمری) و ابزارهای زمان و اوقات شرعی با پس‌زمینه سه‌بعدی",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
